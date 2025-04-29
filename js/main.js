@@ -7,7 +7,7 @@ const form = document.querySelector(".request__form");
 let imaskItem;
 
 function addSelectItems(list) {
-  result.forEach((i, index) => {
+  data.forEach((i, index) => {
     const item = document.createElement("li");
     item.className = "request__select-item";
 
@@ -17,7 +17,7 @@ function addSelectItems(list) {
     ${i.name}
     </p>
     ${i.dial_code}
-    <img class=request__flag  src="images/countries/${i.code}.png"/>
+    <img class=request__flag  src="images/countries/${i.code.toLowerCase()}.png"/>
     </button>`;
 
     list.append(item);
@@ -26,11 +26,11 @@ function addSelectItems(list) {
 
 addSelectItems(selectList);
 
-function choiceItem(index = 0) {
-  const activeCountry = result[index];
+function choiceItem(index = 136) {
+  const activeCountry = data[index];
 
   selectButton.innerHTML = `
-    <img class=request__flag  src="images/countries/${activeCountry.code}.png"/>
+    <img class=request__flag  src="images/countries/${activeCountry.code.toLowerCase()}.png"/>
     ${activeCountry.dial_code}
     <div class=request__arrow></div>
   `;

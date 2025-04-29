@@ -785,6 +785,4 @@ const data = [
   { name: "Zimbabwe", dial_code: "+263", code: "ZW", example: "9-999999" },
 ];
 
-const result = data.map((el) => {
-  return { ...el, code: el.code.toLowerCase() };
-});
+
